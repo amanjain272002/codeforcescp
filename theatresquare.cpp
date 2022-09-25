@@ -1,12 +1,13 @@
 #include <iostream>
-#include<algorithm>
-#include<cmath>
 using namespace std;
+int main()
+{
+    long long n, m, a;
+    cin >> n >> m >> a;
+    long long t;
 
-int main() {
-unsigned long long n,m,a;
-cin>>n>>m>>a;
-unsigned long long value=ceil((double)m/a)*ceil((double)n/a);
-cout<<value ;
-	return 0;
+    t = ((n / a) + ((n % a) != 0)) * ((m / a) + ((m % a) != 0));
+    cout << t;
+
+    return 0;
 }
