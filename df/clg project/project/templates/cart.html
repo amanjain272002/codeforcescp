@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  content %}
+{% comment %} <link rel="stylesheet" href="/static/cart.css"> {% endcomment %}
+
+<div class="container my-5">
+    <div class="row">
+        <h1 class="text-center mb-5">Shopping Cart</h1>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Cart</h3>
+                    {% for cart in carts %}
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3 text-center align-self-center">
+                            <img src="/media/{{cart.product.pictures}}" height="150" width="150"> 
+                        </div>
+                        <div class="col-sm-9">
+                            <div>
+                                <h5>{{cart.product.name}}</h5>
+                                <h6>{{cart.product.title}}</h6>
+                                
+                                <p class="mb-2  small">{{cart.product.description}}</p>
+                                <div class="my-3">
+                                    <label for="quantity">Quantity:</label>
+                                    <a class="btn btn-dark minus-cart" pid = "{{cart.product.id}} "style="padding:8px;box-radius-2px;height:40px;padding-top:3px;"><i class="bi bi-file-minus-fill">-</i></a>
+                                    <span id="quantity" style="border:2px solid black;padding:6px;padding-top:3px;">{{cart.quantity}}</span>
+                                    <a class="btn btn-dark plus-cart" pid = "{{cart.product.id}} "style="padding:8px;box-radius-2px;height:40px;padding-top:3px;"><i class="bi bi-file-plus-fill">+</i></a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-secondary mr-3 remove-cart" pid = "{{cart.product.id}}">Remove item </a>
+                                    <p class="mb-0"><span><strong>${{cart.product.price}}</strong></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <hr class="text-muted">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="text-align:center;">Total Amount</h3>
+                    <ul class="list-group">
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0" >
+                            Amount<span >$ <span id="amount">{{amount}}</span></span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            Shipping<span>$ 20.0</span></li>
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <div>
+                                <strong>Total</strong> <small>(including VAT)</small>
+                            </div>
+                            <span >$ <strong id="totalamount">{{totalamount}}</strong></span>
+                        </li>
+                    </ul>
+                    <div class="d-grid"><a href="/checkout" class="btn btn-primary">Place Order</a></div> 
+                </div>
+            </div>
+        </div> 
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/addtocart.js"></script> 
+{% endblock  %}

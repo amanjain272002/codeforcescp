@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  content %}
+<link rel="stylesheet" href="/static/index.css">
+<link rel="stylesheet" href="/static/owl.css">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 600px;" data-interval="5">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://m.media-amazon.com/images/G/01/2022/mens-shoes/MENS-FALL-BOOTS-NEW-ARRIVALS-OCTOBER-HERO-1440x700.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/G/01/2022/homepage12.05/COOP-BIRKENSTOCK-AOE-960x500-1.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/G/01/2022/womens-shoes/WOMENS-BOOTS-NEW-ARRIVALS-OCTOBER-HERO-1440x700.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/G/01/2022/homepage12.05/COOP-UGG-BOOTS-TRIPTYCH-2-500x500-1.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<div class="container" >
+    <div class = "row ">
+        <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+            <div class="card shadow-lg" style="width: 20rem; background-color:#60E53C; "><a href="{% url 'men' %}" class="btn">
+                <img src="https://m.media-amazon.com/images/I/714B64afFBL._AC_UL480_QL65_.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title"  style = "color:white;">Sports shoes</h5>
+                  <p class="card-text" style = "color:white;">Whether you're just starting to get into running, or you're a seasoned pro, shoes can make or break your workout.</p>
+                  {% comment %} <a href="{% url 'men' %}" class="btn btn-success">Let's Watch</a> {% endcomment %}
+                </div>
+              </div></a>
+        </div>
+        <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+            <div class="card shadow-lg" style="width: 20rem; background-color:#1A35AC;"><a href="{% url 'menformal' %}" class="btn ">
+                <img src="https://imgs.search.brave.com/L3fATsmNQ2a62XkZ7lwFyUgJjFMdSCtZdmuWWXr_hq4/rs:fit:570:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4z/UkxWdVlMZkpTemtp/YmNaQk5VMVVRSGFH/SyZwaWQ9QXBp" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title" style = "color:white;">Formal Shoes</h5>
+                  <p class="card-text" style = "color:white;">The journey begins with the perfect pair. Giving value to your feet. Walk with confidence and attitude. Made with heart
+                  </p>
+                  
+                </div>
+              </div></a>
+        </div>
+
+        <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+            <div class="card shadow-lg" style="width: 20rem; background-color:white"><a href="{% url 'sneaker' %}" class="btn ">
+                <img src="https://i8.amplience.net/i/jpl/jd_EM0EM00955YBR_C_0010_a?qlt=92&w=750&h=531&v=1&fmt=auto" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Sneakers</h5>
+                  <p class="card-text">More power, more perfection and more attractive. We make every step comfortable. Be energized to walk more.</p>
+                  
+                </div>
+              </div></a>
+        </div>
+
+        <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+            <div class="card shadow-lg" style="width: 20rem;background-color:#E243EC;"><a href="{% url 'women' %}" class="btn ">
+                <img src="https://m.media-amazon.com/images/I/71dCt3jMcpS._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center text-light">
+                  <h5 class="card-title">She Fashion Shoes</h5>
+                  <p class="card-text">Your feet deserve better. Quality shoes made easy. Shine your feet today. Get fresh with us.</p>
+                  
+                </div>
+              </div></a>
+        </div>
+
+         <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+            <div class="card shadow-lg" style="width: 20rem;background-color:#ECE212;"><a href="{% url 'womenformal' %}" class="btn ">
+                <img src="https://n.nordstrommedia.com/id/sr3/bc6ba6df-3bf5-44f2-977b-4a50d3194936.jpeg?crop=pad&pad_color=FFF&format=jpeg&trim=color&trimcolor=FFF&w=780&h=838" class="card-img-top" alt="...">
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">High Heels </h5>
+                  <p class="card-text" >Successful Women still have there feet on the ground they just have better shoes.</p>
+                  
+                </div>
+              </div></a>
+        </div>
+        <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+          <div class="card shadow-lg" style="width: 20rem; background-color:#EC4343;"><a href="{% url 'shesneaker' %}" class="btn ">
+              <img src="https://n.nordstrommedia.com/id/sr3/32ed84e7-e575-4420-90cf-531d6ff67f36.jpeg?crop=pad&pad_color=FFF&format=jpeg&trim=color&trimcolor=FFF&w=780&h=838"class="card-img-top" alt="...">
+              <div class="card-body text-center text-light">
+                <h5 class="card-title">She Sneaker</h5>
+                <p class="card-text" >Find the hottest sneaker from brands like Jordan, Nike, Under Armour, and a bunch more.</p>
+                
+              </div>
+            </div></a>
+      </div>
+        
+    </div>
+</div>   
+<div class="container">
+ <a href="#" id= "ul">
+    <div class="card mb-3 mt-5" style="max-width: 2040px;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <a href="https://www.fleetfeet.com/browse/shoes/brooks" target="_blank"><img src="https://m.media-amazon.com/images/G/01/2022/homepage10.10.2/HP-AOE-BROOKS-RUNVIS-960x500_1.png" class="img-fluid rounded-start" id = "side-img">
+        </div></a>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h2 class="card-title text" style="justify-content:center;">Be Seen with Brooks run Visible</h2>
+            <p class="card-text "><h6 class="text">Brighten up your late-night run with apparel and sneakers featuring 3M Carbon Black Stretch reflectivity and contrasting fluorescent colors</h6></p>
+          </div>
+        </div>
+      </div>
+    </div>
+ </a>
+</div> 
+
+
+
+
+<div class="container " id="featureContainer" style="margin-top: 70px; margin-bottom:70px;padding-left:2px;">
+
+  <div class="row mx-auto my-auto justify-content-center">
+      <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
+          
+          <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active" style = "margin-top:15px;margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                          <div class="card-img" style = "padding:20px;border-radius:20px;">
+                            <a href="https://www.adidas.co.in/" target="_blank"><img src="https://imgs.search.brave.com/ejN54GMpXaIsBCkwazdbSybr4euVIsqXduMPvtlVr5w/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/YWQwSklScF9QZXNr/UWh1dnRJdWd3SGFF/SyZwaWQ9QXBp"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item" style = "margin-top:15px;margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                          <div class="card-img" style = "padding:20px;border-radius:20px;">
+                            <a href="https://in.puma.com/in/en" target="_blank"><img src="https://imgs.search.brave.com/x7Ltgp_NCbQjU2WXYp4g8TxjdKdnMDmfKpP5Yf889mM/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC52/aEpJeVl4VVlOTFg0/VGpNWFJjUmNnSGFG/aiZwaWQ9QXBp"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item" style = "margin-top:15px;margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                        <div class="card-img" style = "padding:20px;border-radius:20px;">
+                          <a href="https://www.jd-sports.com.au/brand/nike/" target="_blank"><img src="https://imgs.search.brave.com/46klNrk3k0dIswRqNVZGghNEwUByib5T_YVP89HTej4/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93d3cu/cnh3YWxscGFwZXIu/c2l0ZS93cC1jb250/ZW50L3VwbG9hZHMv/bmlrZS1sb2dvLWhk/LXdhbGxwYXBlcnMt/ZmluZC1iZXN0LWxh/dGVzdC1uaWtlLWxv/Z28taGQtd2FsbHBh/cGVycy5qcGc"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item" style = "margin-top:15px;margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                          <div class="card-img" style = "padding:20px;border-radius:20px;">
+                            <a href="https://usa.tommy.com/en/shoes-footwear-men" target="_blank"><img src="https://imgs.search.brave.com/RfLKFzivSoCoUBZTKFRs4FxHpokAIIJy9IbqDafB9lI/rs:fit:759:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5B/Y3ZLU0J3SjBmclI1/WlNDS2M2a2V3SGFF/byZwaWQ9QXBp"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item" style = "margin-top:15px;margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                          <div class="card-img" style = "padding:20px;border-radius:20px;">
+                            <a href="https://asics.hk/" target="_blank"><img src="https://imgs.search.brave.com/2AJuwwyyu61Xr3tnqYFFDg04TSY6LgV-gNy3Xumi-k0/rs:fit:713:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5M/dzJ1cVFja051NXJX/aEVBRmE4bmlBSGFF/NyZwaWQ9QXBp"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item" style = "margin-top:15px; margin-bottom:15px;">
+                  <div class="col-md-3">
+                      <div class="card" style = "box-shadow: 10px 10px 60px #E0E0E0	;border-radius:10px;">
+                          <div class="card-img" style = "padding:20px;border-radius:20px;">
+                            <a href="https://www.skechers.com/" target="_blank"><img src="https://imgs.search.brave.com/RSkK-398lvjKaxvEYWO4S0pQv_lqWrSCwHpP9TXiGas/rs:fit:1234:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC52/OVc5V2QwbGRvTGM0/c0Rkc0E2cFFRSGFD/MiZwaWQ9QXBp"
+                                  class="img-fluid"></a>
+                          </div>
+                          <div class="card-img-overlays"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container mt-5 mb-4 shadow bg-secondary p-2 text-dark bg-opacity-10" >
+  <p class="text-lg-center fs-2 pt-4">Complete Your Fall ’22 Closet</p>
+
+  <div class="row">
+    <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+      <div class="card shadow" style="width: 20rem;border-radius:10px;">
+          <a href="https://www.zappos.com/" target="_blank"><img src="https://images.dsw.com/is/image/DSWShoes/P221344_editorial_platform?impolicy=qlt-medium&imwidth=1011&imdensity=1" class="card-img-top" alt="..." style="height:400px;"></a>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+      <div class="card shadow" style="width: 20rem;border-radius:10px;">
+        <a href="https://www.zappos.com/" target="_blank"><img src="https://images.dsw.com/is/image/DSWShoes/P221344_editorial_western?impolicy=qlt-medium&imwidth=1011&imdensity=1" class="card-img-top" alt="..." style="height:400px;"></a>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+      <div class="card shadow" style="width: 20rem;border-radius:10px;">
+        <a href="https://www.zappos.com/" target="_blank"><img src="https://images.dsw.com/is/image/DSWShoes/P221396_editorial_tall?impolicy=qlt-medium&imwidth=1011&imdensity=1" class="card-img-top" alt="..." style="height:400px;"></a>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+      <div class="card shadow" style="width: 20rem;border-radius:10px;">
+        <a href="https://www.zappos.com/" target="_blank"><img src="https://m.media-amazon.com/images/G/01/2022/homepage10.03/BROADCAST-SLIPPERS-NEW-ARRIVALS-OCTOBER-TRIPTYCH-500x500.jpg" class="card-img-top" alt="..." style="height:400px;"></a>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 2%;padding-top: 2%;">
+      <div class="card shadow" style="width: 20rem;border-radius:10px;">
+        <a href="https://www.zappos.com/" target="_blank"><img src="https://m.media-amazon.com/images/I/71ARoYPrJ6L._AC_SX255_.jpg" class="card-img-top" alt="..." style="height:400px;"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+
+<script src="/static/owl.js"></script> 
+{% endblock  %}

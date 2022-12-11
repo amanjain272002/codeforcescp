@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block  content %}
+    <section class="container sproduct my-5 pt-4 pb-3 shadow-lg" style="border-radius:15px;background-color:#DFDAE0;">
+        <div class="row mt-5 mb-5">
+            <div class="col-lg-5 col-md-12 col-12 " style="background-color:#000000;border-radius:5px;padding:15px;">
+                <img class="img-fluid w-100 " src="/media/{{product.pictures}}" alt="" style="height: 450px;border-radius: 60px;margin:10px;padding-right:15px;">
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <h5 class="text-dark" style="font-weight:bold;">{{product.title}}</h6>
+                <h3 class="py-4" style="font-weight:bold;color:#1327E2;">{{product.name}}</h3>
+                <h2 style="font-weight:bold;color:#F71706;">${{product.price}}</h2><br>
+                <a href = "/cart" type ="submit" class="btn btn-success px-5 py-2 ms-2"> Go To Cart </a>
+                <h4 class="mt-5 mb-4" style="text-align:justify;font-weight:bolder;">Product Details</h4>
+                <span style="text-align:justify;font-weight:bold;">{{product.paragraph}}</span>
+            </div>
+        </div>
+    </section>
+
+    {% endblock  %}

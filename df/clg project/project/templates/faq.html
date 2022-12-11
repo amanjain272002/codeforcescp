@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block  content %}
+<link rel="stylesheet" href="/static/faq.css">
+<div class="container-fluid">
+  <h1 class="text-center m-4">FAQ</h1>
+  <div id="wrapper">
+      <div id="accordion">
+          <div class="accord row">
+              <div class="col-6">
+                  <h3 class="text-wrap m-2" >Can I change or cancel my order once it has been placed?</h3>
+                  <p class="text-start">Unfortunately, no. Once your order has been placed it is sent to our warehouse for processing. You will need to return the original package to obtain a refund.</p>
+              </div>
+              <div class="col-6">
+                  <h3 class="text-wrap m-2">How do I used a promotion code?</h3>
+                  <p class="text-start">To use your promotion or coupon code, enter the code at checkout in the appropriate field. Make sure you enter the code with the exact spelling and capitalization as shown. You must click "apply" in order for the discount to be applied. The discounted amount will be displayed on the Shopping Bag and Order Summary pages. If the code is invalid, expired or you have not placed the correct products in the shopping bag, the discount will not be applied.</p>
+              </div>
+          </div>
+          <div class="accord row">
+              <div class="col-6">
+                  <h3 class="text-wrap m-2">How do I return or exchange an item?</h3>
+                  <p class="text-start">We are happy to offer free online returns for orders placed on puma.com within 45 days of purchase. You may return your Shoe-A-Holic products* in their original, unused condition for a full refund.</p>
+              </div>
+              <div class="col-6">
+                  <h3 class="text-wrap m-2">How is sales tax calculated?</h3>
+                  <p class="text-start">We charge sales and use tax according to federal, state and local government guidelines. Taxes are calculated based on the shipping address provided and the appropriate rules for that tax jurisdiction.</p>
+              </div>
+          </div>
+          <div class="accord row">
+              <div class="col-6">
+              <h3 class="text-wrap m-2">Is there a maximum unit purchase on a single item?</h3>
+              <p class="text-start">Yes, most shoeaholic.com products have an order quantity limit of 6. Certain Select styles and higher priced items will have a quantity limit of 2. PUMA reserves the right to lower the order quantity limit based on item availability.</p>
+              </div>
+              <div class="col-6">
+                  <h3 class="text-wrap m-2">What if I have a defective or damaged item?</h3>
+                  <p class="text-start">If you have received a damaged item or believe an item is defective, please contact Customer Service at 1-888-565-7862 or via customerservice.us@gmail.com</p>
+                  </div>
+          </div>
+          <div class="accord row">
+              <div class="col-6">
+              <h3 class="text-wrap m-2">Do you offer a student discount?</h3>
+              <p class="text-start">Yes! We are happy to offer a Student Discount through UNiDAYS.
+
+                  To see if you qualify, you must first register with UNiDAYS, and then enter your UNiDAYS email and password in our Student Discount page. </p>
+              </div>
+              <div class="col-6">
+                  <h3 class="text-wrap m-2">How do I check my order status?</h3>
+                  <p class="text-start">To check the status of your order, including processing and shipping updates, click here. You can check your order status by logging in to your My Account or by entering your order number, email address and billing zip code.</p>
+                  </div>
+          </div>
+      </div>
+  </div>
+<hr>
+  <div class = "container" style  = "margin: 3rem auto;width: 50%;padding : 50px;border-radius: 10px; background-color:#DFDAD8;">
+    <div class = "container" style = "background-color : white;padding:20px;border-radius: 5px;">
+    <h3 style = "padding-bottom:90px" class = "text-center">Contact Us </h3>
+    <form  action="/faqfetch/" method="POST">
+        {% csrf_token %}
+        <div class="mb-3" style = "padding-bottom:40px">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@gmail.com" name="email" >
+          </div>
+          <div class="mb-3" style = "padding-bottom:30px">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary ">Submit</button>
+      </form></div>
+  </div>
+</div>
+<script>
+
+  // parentElement, children, nextElementSibling, previousElementSibling
+
+
+
+  let allH3 = document.querySelectorAll("h3")
+
+  allH3.forEach((h3) => {
+      h3.onclick = function () {
+          //FIRST METHOD
+          if (h3.nextElementSibling.style.display === 'block')
+              h3.nextElementSibling.style.display = "none"
+          else {
+              //check all para and close if any are open
+              let allP = document.querySelectorAll("p")
+              allP.forEach((para) => {
+                  if (para.style.display === "block")
+                      para.style.display = "none"
+              })
+
+              h3.nextElementSibling.style.display = "block"
+          }
+      }
+  })
+</script>
+
+
+
+{% endblock  %}

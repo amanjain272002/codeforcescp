@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+{% load crispy_forms_tags %}  
+ {% comment %} <link rel="stylesheet" href="/static/register.css">  {% endcomment %}
+
+<!--Register--> 
+<div class="container py-5 " style = "padding:220px;">
+	<div class = "container shadow-lg" style = "padding : 50px ; background-color : #BDC5F1 ;border-radius: 50px;">
+	<h1 style = "padding:10px;text-align:center;">Register</h1>
+	<form method="POST">
+		{% if messages %}
+		{% for message in messages %}
+		<p {% if message.tags %} class = "alert-alert-{{message.tags}} mb-3"{% endif %}{{message}}</p>
+		{% endfor %}
+		{% endif %}
+		{% csrf_token %}
+		{{ register_form|crispy }}                  
+		<button class="btn" type="submit" style="margin-top:50px;text-align:center;background-color:blue;color:white; ">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p> </div>
+</div>
+{% endblock  %}
