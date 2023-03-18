@@ -3,23 +3,27 @@ using namespace std;
 
 void solve()
 {
-    int a, b, ans = 0;
+    long int a, b;
     cin >> a >> b;
-    if (b >= a)
+
+    if (a == 0)
     {
-        ans = ans + 2 * a + b + b - a + 1;
-        cout << ans << endl;
+        cout << 1 << endl;
+        return;
     }
-    else
+
+    if (b == 0)
     {
-        ans = ans + a + b + 1 + a - b;
-        cout << ans << endl;
+        cout << a + 1 << endl;
+        return;
     }
+
+    cout << (b * 2) + a + 1 << endl;
 }
 
 int main()
 {
-    int t;
+    long int t;
     cin >> t;
     while (t--)
     {
