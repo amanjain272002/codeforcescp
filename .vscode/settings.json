@@ -5,6 +5,7 @@
         "cmath": "cpp",
         "xlocale": "cpp",
         "algorithm": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "utility": "cpp"
     }
 }
