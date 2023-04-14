@@ -6,6 +6,7 @@
         "xlocale": "cpp",
         "algorithm": "cpp",
         "ostream": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "vector": "cpp"
     }
 }
