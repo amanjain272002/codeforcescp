@@ -7,6 +7,7 @@
         "algorithm": "cpp",
         "ostream": "cpp",
         "utility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "sstream": "cpp"
     }
 }
