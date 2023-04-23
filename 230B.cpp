@@ -4,25 +4,18 @@
 #define lg long long
 using namespace std;
 
-void checkPrime(lg int l, lg int a)
+int checkPrime(lg int l)
 {
     int chk = 0;
-    for (int i = 2; i < l; i++)
+    for (int i = 3; i <= l / 2; i+=2)
     {
-        if (a % i == 0)
+        if (l % i == 0)
         {
             chk++;
             break;
         }
     }
-    if (chk == 0)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
+    return chk;
 }
 void solve(lg int n)
 {
@@ -35,10 +28,28 @@ void solve(lg int n)
         {
             cout << "YES" << endl;
         }
+        else if (a % 2 == 0)
+        {
+            cout << "NO" << endl;
+        }
         else if (a > 8)
         {
-            lg int l = sqrtl(a);
-            checkPrime(l, a);
+            double l = sqrt(a);
+            if (l != int(l))
+            {
+                cout << "NO" << endl;
+            }
+            else
+            {
+                if (checkPrime(l))
+                {
+                    cout << "NO" << endl;
+                }
+                else
+                {
+                    cout << "YES" << endl;
+                }
+            }
         }
         else
         {
