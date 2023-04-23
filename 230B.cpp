@@ -2,21 +2,42 @@
 #include <algorithm>
 #include <cmath>
 #define lg long long
+#define limit 1000000
 using namespace std;
 
-int checkPrime(lg int l)
+lg prime_flag[limit];
+void checkPrime()
 {
-    int chk = 0;
-    for (int i = 3; i <= l / 2; i+=2)
+    prime_flag[0] = prime_flag[1] = 1;
+    lg i, j;
+    for (i = 2; i < limit; i++)
     {
-        if (l % i == 0)
+        if (prime_flag[i] == 0)
         {
-            chk++;
-            break;
+            for (j = i * i; j < limit; j += i)
+            {
+                if (prime_flag[j] == 0)
+                {
+                    prime_flag[j] = 1;
+                }
+            }
         }
     }
-    return chk;
 }
+
+int sqrtRoot(lg a)
+{
+    double d = sqrtl(a);
+    if (d == int(d))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 void solve(lg int n)
 {
     lg int a;
@@ -32,24 +53,9 @@ void solve(lg int n)
         {
             cout << "NO" << endl;
         }
-        else if (a > 8)
+        else if ((prime_flag[int(sqrt(a))] == 0) && sqrtRoot(a) == 1)
         {
-            double l = sqrt(a);
-            if (l != int(l))
-            {
-                cout << "NO" << endl;
-            }
-            else
-            {
-                if (checkPrime(l))
-                {
-                    cout << "NO" << endl;
-                }
-                else
-                {
-                    cout << "YES" << endl;
-                }
-            }
+            cout << "YES" << endl;
         }
         else
         {
@@ -60,6 +66,7 @@ void solve(lg int n)
 
 int main()
 {
+    checkPrime();
     lg int n;
     cin >> n;
     solve(n);
