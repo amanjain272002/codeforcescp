@@ -1,38 +1,35 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int main()
 {
-    string s,str;
-    char c;
-    str = "";
-    int flag = 0,j=0;
+    int check = 0;
+    string s;
     cin >> s;
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 1; i < s.length(); i++)
     {
-        if ((int(s[i]) >= 65 && (int(s[i]) <= 90))||(int(s[j]) >= 97 && (int(s[j]) <= 122)))
+        if (islower(s[i]))
         {
-            flag = 1;
-            j = j-1;
-        }
-        else{
-            flag = 0;
+            check = 1;
             break;
         }
     }
-    if(flag==1){
-        str = (char)toupper(s[0]);
-        for (int i = 1; i < s.length(); i++)
+    if (check == 0)
+    {
+        for (int i = 0; i < s.length(); i++)
         {
-            c = (char)tolower(s[i]);
-            str = str + c;
+            if (islower(s[i]))
+            {
+                s[i] = toupper(s[i]);
+            }
+            else
+            {
+                s[i] = tolower(s[i]);
+            }
         }
-        cout<<str;
     }
-    else{
-        cout<<s;
-    }
-
+    cout << s << endl;
     return 0;
 }
