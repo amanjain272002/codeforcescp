@@ -8,6 +8,7 @@
         "ostream": "cpp",
         "utility": "cpp",
         "vector": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "cstdlib": "cpp"
     }
 }
