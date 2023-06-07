@@ -8,33 +8,21 @@ void maximum_sum()
     ll n, k, sum = 0;
     cin >> n >> k;
     ll a[100000];
+    ll prf[100001];
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
-        sum += a[i];
     }
     sort(a, a + n);
-    ll ini = 0, fin = n - 1;
-    ll mx=0,sum1=sum,sum2=sum;
-    while (k--)
+    for (int i = 1; i <= n; i++)
     {
-        sum1 = sum1 - (a[ini] + a[ini+1]);
-        sum2 = sum2 - a[fin];
-        mx = max(sum1,sum2);
-        if(mx == sum1){
-            fin = fin-1;
-            sum2 = sum1;
-            sum = sum1;
-        }
-        else
-        {
-            ini = ini+2;
-            sum1 = sum2;
-            sum = sum2;
-        }
-        k--;
+        prf[i] = prf[i - 1] + a[i - 1];
     }
-    cout<<sum<<endl;
+    for (int i = 0; i <= k; i++)
+    {
+        sum = max(sum, prf[n - i] - prf[2 * (k - i)]);
+    }
+    cout << "sum = " <<sum<< endl;
 }
 
 int main()
