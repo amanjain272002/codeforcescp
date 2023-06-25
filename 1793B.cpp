@@ -18,15 +18,23 @@ int main()
         a[0] = d[0];
         for (int i = 1; i < n; i++)
         {
-            a[i] = d[i] + a[i - 1];
-            if (d[i] == 0)
-            {
-                continue;
-            }
-
-            else if (d[i] < d[i - 1])
+            int x = a[i - 1] + d[i];
+            int y = a[i - 1] - d[i];
+            if ((x >= 0 && y >= 0) && (x != y))
             {
                 flag = 1;
+                break;
+            }
+            else
+            {
+                if (x > 0)
+                {
+                    a[i] = x;
+                }
+                else
+                {
+                    a[i] = y;
+                }
             }
         }
         if (flag == 1)
